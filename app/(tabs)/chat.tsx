@@ -35,14 +35,6 @@ export default function ChatScreen() {
     }
   }, [messages.length, loading]);
 
-  useEffect(() => {
-    if (messages.length > 0 && !loading) {
-      setTimeout(() => {
-        flatListRef.current?.scrollToEnd({ animated: false });
-      }, 500);
-    }
-  }, [loading]);
-
   const scrollToBottom = () => {
     flatListRef.current?.scrollToEnd({ animated: true });
     setShowScrollToBottom(false);
